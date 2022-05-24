@@ -1,0 +1,8 @@
+flask
+flask-cors
+flask-jwt-extended
+flask-login
+flask-mail
+flask-restful
+flask-sqlalchemy
+python-dotenv
