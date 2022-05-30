@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask import jsonify
+from flask import jsonify, request
 
 clients = [
     {
@@ -22,7 +22,9 @@ class AllClients(Resource):
         })
     
     def post(self):
-        return
+        client = request.get_json()
+        clients.append(client)
+        return client, 201
     
 class Client(Resource):
     
@@ -30,4 +32,7 @@ class Client(Resource):
         return jsonify({
             'client': clients[int(id)]
         })
+        
+    def delete(self, id):
+        return 
     
